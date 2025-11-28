@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>指尖光速侠 - AI Speed Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom Animations for Game Juice */
+      @keyframes pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(0.95); }
+        100% { transform: scale(1); }
+      }
+      .click-anim {
+        animation: pop 0.1s ease-in-out;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); opacity: 1; }
+        100% { transform: translateY(-50px); opacity: 0; }
+      }
+      .floating-score {
+        position: absolute;
+        animation: float 0.8s ease-out forwards;
+        pointer-events: none;
+        font-weight: bold;
+        color: #fbbf24;
+      }
+      @keyframes explode-flash {
+        0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+      }
+      .explode-anim {
+        animation: explode-flash 0.4s ease-out forwards;
+      }
+      @keyframes spark-fly {
+        0% { transform: translate(-50%, -50%) rotate(var(--rot)) translateY(0) scaleY(1); opacity: 1; }
+        100% { transform: translate(-50%, -50%) rotate(var(--rot)) translateY(var(--dist)) scaleY(0.2); opacity: 0; }
+      }
+      .spark-anim {
+        position: absolute;
+        transform-origin: center center;
+        animation: spark-fly var(--dur) cubic-bezier(0, 0.9, 0.57, 1) forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-900 text-white select-none overflow-hidden touch-manipulation">
+    <div id="root"></div>
+  </body>
+</html>
